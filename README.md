@@ -1,47 +1,6 @@
-# QuantLab 1.0
 
-A C++17 daily ETF backtesting project for Magnus. Two interchangeable strategies,
-buy-and-hold comparison, explicit portfolio accounting, separate development and
-holdout periods, audit logs, and local HTML reports. No broker connection.
-
-**Start with `START_HERE.md`.** You can use a complete project or paste the supplied
-`Backtester.cpp` into your existing Visual Studio console project.
-
-## What is included
-
-- Trend following: invest above a rolling simple moving average, otherwise cash.
-- Mean reversion: enter after a negative rolling z-score; exit on recovery or timeout.
-- Buy-and-hold over precisely the same evaluation sessions and starting capital.
-- Prior-close signals, next-open fills, fixed commissions, adverse slippage.
-- Cash/share ledger, fractional or whole-share entries, allocation limits.
-- Raw-price split handling and explicit cash distributions.
-- Optional cash yield, return/CAGR, drawdown, volatility, Sharpe, exposure, trade counts.
-- Event ledger and daily equity CSVs for every strategy, plus an HTML comparison.
-- Immutable run folders, input snapshots, settings and data fingerprints.
-- Development-only default; explicit command required to evaluate holdout.
-- 20-trial development-only parameter/cost sensitivity tool with fixed dates.
-- 20 C++ accounting/execution tests, plus Python integration checks.
-- A deterministic synthetic fixture, labeled throughout as **NOT SPY**.
-- Optional SPY downloader with data-provenance and SHA-256 metadata.
-
-## Status and important limits
-
-This is a usable educational/research first release, not a validated institutional
-execution simulator. It supports one long-only instrument per run. It does not yet
-implement multi-asset rotation, pairs trading, shorting, options, futures,
-intraday order books, or live execution.
-
-The supplied example uses **invented data**. A real SPY download was rate-limited
-in the build environment; there is no claimed SPY performance result. The live
-downloader must be verified on your machine. The C++ code was compiled and tested
-on Linux with GCC; Windows/MSVC and the Windows launcher were not available for
-execution here. Both source and build configuration target standard C++17.
-
-Dividends are credited as cash on their ex-date, a documented approximation to
-payment-date accounting, and are not automatically reinvested. Price data must
-follow the exact contract in `docs/DATA.md`; adjusted prices plus explicit
-corporate actions can double-count returns. No liquidity/market impact, taxes,
-settlement restrictions, or dynamic spread model is included.
+**Start with `START_HERE.md`.** paste the 
+`Backtester.cpp` into a Visual Studio console project.
 
 ## Project layout
 
@@ -112,8 +71,6 @@ cmake --build build --config Release
 ctest --test-dir build -C Release --output-on-failure
 ```
 
-No Python is required to build or run the backtester. Python is only used for
-optional acquisition/research helpers and additional integration verification.
 
 ## Sources consulted
 
@@ -121,6 +78,3 @@ optional acquisition/research helpers and additional integration verification.
 - yfinance API: https://ranaroussi.github.io/yfinance/reference/yfinance.price_history.html
 - yfinance source: https://github.com/ranaroussi/yfinance/blob/main/yfinance/scrapers/history.py
 - Research pitfalls: https://www.quantconnect.com/docs/v2/writing-algorithms/key-concepts/research-guide
-
-Market-data access is subject to provider terms. Nothing in this project places
-orders or establishes that either strategy has a profitable edge.
