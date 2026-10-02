@@ -1,0 +1,25 @@
+QuantLab 1.0
+source=C:\Users\campm\Downloads\QuantLab\QuantLab\data\SPY.csv
+synthetic=0
+phase=development
+rows=6539
+canonical_data_fnv1a64=fce49e1d558ab9a8
+first_data_date=2000-01-03
+last_data_date=2025-12-31
+evaluation_start=2002-01-02
+evaluation_end=2020-12-31
+holdout_start=2021-01-04
+initial=100000
+allocation=1
+fee=1
+slippage_bps=5
+cash_rate=0
+risk_free=0
+trend_window=200
+mean_window=20
+entry_z=-2
+max_hold=5
+whole_shares=0
+terminal_liquidation=false
+dividends=ex_date_cash_not_automatically_reinvested
+orders=prior_close_signal_next_open

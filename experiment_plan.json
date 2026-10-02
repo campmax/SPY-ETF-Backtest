@@ -1,0 +1,20 @@
+{
+  "trend_windows": [
+    100,
+    150,
+    200,
+    250,
+    300
+  ],
+  "slippage_bps": [
+    1,
+    5,
+    10,
+    20
+  ],
+  "start_date": "2002-01-01",
+  "holdout_date": "2021-01-01",
+  "phase": "development",
+  "data_sha256": "105629baba79fd4bb3ce343d5add2e12df9371011a089d4eee7af8135e4506f0",
+  "note": "20 planned trials; do not treat the best result as independent evidence."
+}
