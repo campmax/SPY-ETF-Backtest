@@ -20,23 +20,6 @@
 | `docs/DATA.md` | Input schema and downloader assumptions |
 | `docs/VALIDATION.md` | What was actually tested and what remains unverified |
 
-## Command-line quick start
-
-From this project's directory, after building:
-
-```powershell
-.\build\quantlab.exe --demo
-py -m pip install yfinance
-py tools\fetch_spy.py --start 2000-01-01 --end 2026-01-01 --out data\SPY.csv
-.\build\quantlab.exe --data data\SPY.csv --start-date 2002-01-01 --holdout-date 2021-01-01 --phase development --out results\spy_baseline_dev
-```
-
-Dates are example choices, not an assertion that 2021–2025 is unseen historical
-information. If you already used that period to choose rules, it is not genuinely
-untouched. The script's end date is exclusive. Save the downloaded metadata along
-with your experiment notes; never overwrite a data snapshot to refresh a run.
-
-After rules are fixed and your research notes are recorded:
 
 ```powershell
 .\build\quantlab.exe --data data\SPY.csv --start-date 2002-01-01 --holdout-date 2021-01-01 --phase holdout --out results\spy_frozen_holdout
